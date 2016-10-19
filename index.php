@@ -53,15 +53,14 @@
 
     <div class="panel panel-default" ng-repeat="item in vm.items | orderBy:sortType:sortReverse" ng-show="([item] | filter:searchId).length > 0">
         <div class="panel-body">
-            <h5 ng-switch on="item._source.code">
-                <p style="color: green" ng-switch-when="item._source.code == 200" ng-bind="item._source.code"></p>
-                <p style="color: red"   ng-switch-default ng-bind="item._source.code"></p>
+            <h5>
+                <?php include('codes.html'); ?>
             </h5>
             <h5><b>[ {{ item._source.method }} ]</b> : {{ item._source.endpoint }}</h5>
             <h5><b>Ip Address</b> : {{ item._source.ip }}</h5>
             <h5><b>User Name</b> : {{ item._source.user_name }}</h5>
             <h5><b>User Phoneno</b> : {{ item._source.user_phoneno }}</h5>
-            <h5><b>User Id</b> : {{ item._source.user_user_id }}</h5>
+            <h5><b>User Id</b> : {{ item._source.user_id }}</h5>
             <h5><b>Request Time</b> : {{ item._source.response_time }}, <b>Response Time</b> : {{ item._source.request_time }}</h5>
             <div class="row">
                 <div class="col-md-6">
